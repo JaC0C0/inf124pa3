@@ -8,79 +8,32 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 public class main extends HttpServlet{
-//    public static void main() {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
 //        String url = "jdbc:mysql:@matt-smith-v4.ics.uci.edu";
 //        String user = "inf124db057";
 //        String password = "wRd8MJP2XGWa";
 //
 //        String sql = "SELECT * FROM `PRODUCTS` WHERE pid = 432231";
-//
+//        response.setContentType("text/html");
+//        PrintWriter out = response.getWriter();
 //        try {
-////            DriverManager.registerDriver(new org.gjt.mm.mysql.Driver());
+//    //            DriverManager.registerDriver(new org.gjt.mm.mysql.Driver());
 //            Class.forName ("org.gjt.mm.mysql.Driver");
 //            Connection conn = DriverManager.getConnection(url, user, password);
 //            Statement st = conn.createStatement();
 //            int m = st.executeUpdate(sql);
 //            if (m == 1)
-//                System.out.println("inserted successfully : "+sql);
+//                out.println("inserted successfully : "+sql);
 //            else
-//                System.out.println("insertion failed");
+//                out.println("insertion failed");
 //            conn.close();
 //        } catch (Exception e) {
-//            System.err.println(e);
+//            out.println(e);
 //        }
-//    }
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        String url = "jdbc:mysql:@matt-smith-v4.ics.uci.edu";
-        String user = "inf124db057";
-        String password = "wRd8MJP2XGWa";
-
-        String sql = "SELECT * FROM `PRODUCTS` WHERE pid = 432231";
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        try {
-    //            DriverManager.registerDriver(new org.gjt.mm.mysql.Driver());
-            Class.forName ("org.gjt.mm.mysql.Driver");
-            Connection conn = DriverManager.getConnection(url, user, password);
-            Statement st = conn.createStatement();
-            int m = st.executeUpdate(sql);
-            if (m == 1)
-                out.println("inserted successfully : "+sql);
-            else
-                out.println("insertion failed");
-            conn.close();
-        } catch (Exception e) {
-            out.println(e);
-        }
     }
 
     public void destroy() {
 
     }
-//    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
-//        String url = "jdbc:mysql:@matt-smith-v4.ics.uci.edu";
-//        String user = "inf124db057";
-//        String password = "wRd8MJP2XGWa";
-//
-//        String sql = "SELECT * FROM `PRODUCTS` WHERE pid = 432231";
-//
-//        try {
-////            DriverManager.registerDriver(new org.gjt.mm.mysql.Driver());
-//            Class.forName ("org.gjt.mm.mysql.Driver");
-//            Connection conn = DriverManager.getConnection(url, user, password);
-//            Statement st = conn.createStatement();
-//            int m = st.executeUpdate(sql);
-//            if (m == 1)
-//                System.out.println("inserted successfully : "+sql);
-//            else
-//                System.out.println("insertion failed");
-//            conn.close();
-//        } catch (Exception e) {
-//            System.err.println(e);
-//        }
-//    }
-//
-//    public void destroy() {
-//
-//    }
+
 }

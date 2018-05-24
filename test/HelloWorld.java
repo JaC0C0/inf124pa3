@@ -15,6 +15,7 @@ public class HelloWorld extends HttpServlet {
       throws ServletException, IOException {
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();
+      String test = "LDKFJLSKJDFL";
       out.println("<h1>" + message + "</h1>");
    }
    public void destroy() {
