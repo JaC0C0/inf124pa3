@@ -1,3 +1,4 @@
+import java.net.URL;
 import java.sql.*;
 import java.io.*;
 import javax.servlet.*;
@@ -43,7 +44,7 @@ public class productPage extends HttpServlet{
                 int price = rs.getInt("price");
                 String material = rs.getString("material");
                 String description = rs.getString("description");
-                String img = rs.getString("img");
+                URL img = rs.getURL("img");
                 int inv = rs.getInt("inv");
                 int pid = rs.getInt("pid");
 
@@ -51,7 +52,7 @@ public class productPage extends HttpServlet{
                 out.println("   <tr class = 'itemBox'>" +
                         "       <td class = 'picCol'>" +
                         "           <a href='item.php?pid=" + pid + ">" +
-                        "           <img src='" + img + "' alt=" + name + " class='fill grow'>" +
+                        "           <img src='" + img.toString() + "' alt=" + name + " class='fill grow'>" +
                         "           </a>" +
                         "       </td>" +
                         "       <td class = 'descCol'><p>" + name + "</p><p>Price: $" + price + "</p><p>Material: " + material + "</p></td>" +
