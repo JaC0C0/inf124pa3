@@ -51,7 +51,7 @@ public class productPage extends HttpServlet{
                 out.println("   <tr class = 'itemBox'>" +
                         "       <td class = 'picCol'>" +
                         "           <a href='item.php?pid=" + pid + ">" +
-                        "           <img src=" + img + " alt=" + name + " class='fill grow'>" +
+                        "           <img src='" + img + "' alt=" + name + " class='fill grow'>" +
                         "           </a>" +
                         "       </td>" +
                         "       <td class = 'descCol'><p>" + name + "</p><p>Price: $" + price + "</p><p>Material: " + material + "</p></td>" +
