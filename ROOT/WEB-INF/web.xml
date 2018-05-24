@@ -46,4 +46,14 @@
      <url-pattern>/main</url-pattern>
   </servlet-mapping>
 
+    <servlet>
+        <servlet-name>newDBTest</servlet-name>
+        <servlet-class>newDBTest</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>newDBTest</servlet-name>
+        <url-pattern>/newDBTest</url-pattern>
+    </servlet-mapping>
+
 </web-app>
