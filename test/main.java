@@ -17,7 +17,7 @@ public class main extends HttpServlet{
         PrintWriter out = response.getWriter();
         try {
     //            DriverManager.registerDriver(new org.gjt.mm.mysql.Driver());
-            Class.forName ("com.mysql.jdbc.Driver");
+            Class.forName ("org.gjt.mm.mysql.Driver");
             Connection conn = DriverManager.getConnection(url, user, password);
             Statement st = conn.createStatement();
             int m = st.executeUpdate(sql);
