@@ -11,7 +11,7 @@ import java.sql.*;
 
 public class main extends HttpServlet{
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        String url = "jdbc:mysql:@matt-smith-v4.ics.uci.edu";
+        String url = "jdbc:mysql://matt-smith-v4.ics.uci.edu/inf124db057";
         String user = "inf124db057";
         String password = "wRd8MJP2XGWa";
         String sql = "SELECT * FROM `PRODUCTS` WHERE pid = 432231";
