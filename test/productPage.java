@@ -12,13 +12,14 @@ public class productPage extends HttpServlet{
         String password = "wRd8MJP2XGWa";
         String sql = "SELECT * FROM `Products`";
         response.setContentType("text/html");
+        String css = request.getContextPath() + "/webfiles/main.css";
         PrintWriter out = response.getWriter();
         try {
             out.println("<html>\n" +
                     "    <head>\n" +
                     "        <title>Foil Me, Daddy</title>\n" +
                     "        <!-- link to main stylesheet -->\n" +
-                    "        <link rel=\"stylesheet\" type=\"text/css\" href=\"main.css\">\n" +
+                    "        <link rel=\"stylesheet\" type=\"text/css\" href=\""+ css + "\">\n" +
                     "    </head>\n" +
                     "\n" +
                     "    <a href=\"Store.php\" class=\"topHeader\"><h1>Foil Me, <em>Daddy</em></h1></a>\n" +
@@ -45,7 +46,6 @@ public class productPage extends HttpServlet{
                 String img = rs.getString("img");
                 int inv = rs.getInt("inv");
                 int pid = rs.getInt("pid");
-
 
 
                 out.println("   <tr class = 'itemBox'>" +
