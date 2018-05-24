@@ -19,7 +19,7 @@ public class productPage extends HttpServlet{
                     "    <head>\n" +
                     "        <title>Foil Me, Daddy</title>\n" +
                     "        <!-- link to main stylesheet -->\n" +
-                    "        <link rel=\"stylesheet\" type=\"text/css\" href=\""+ css + "\">\n" +
+                    "        <link rel=\"stylesheet\" type=\"text/css\" href=\"main.css\">\n" +
                     "    </head>\n" +
                     "\n" +
                     "    <a href=\"Store.php\" class=\"topHeader\"><h1>Foil Me, <em>Daddy</em></h1></a>\n" +

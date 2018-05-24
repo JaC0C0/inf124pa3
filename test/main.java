@@ -18,7 +18,25 @@ public class main extends HttpServlet{
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         try {
-    //            DriverManager.registerDriver(new org.gjt.mm.mysql.Driver());
+            out.println("<html>\n" +
+                    "    <head>\n" +
+                    "        <title>Foil Me, Daddy</title>\n" +
+                    "        <!-- link to main stylesheet -->\n" +
+                    "        <link rel=\"stylesheet\" type=\"text/css\" href=\"main.css\">\n" +
+                    "    </head>\n" +
+                    "\n" +
+                    "    <a href=\"Store.php\" class=\"topHeader\"><h1>Foil Me, <em>Daddy</em></h1></a>\n" +
+                    "    <nav class=\"menu\">\n" +
+                    "        <ul>\n" +
+                    "            <li><a href=\"Store.php\">Home</a></li>\n" +
+                    "            <li><a href=\"about.html\">About Us</a></li>\n" +
+                    "            <li><a href=\"confirmation.html\">Order Confirmations</a></li>\n" +
+                    "        </ul>\n" +
+                    "    </nav>\n" +
+                    "    <a href=\"Store.php\">\n" +
+                    "    <h2>Store</h2>\n" +
+                    "    </a>\n" +
+                    "    <table>");
             Class.forName ("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, user, password);
             Statement st = conn.createStatement();
@@ -28,13 +46,9 @@ public class main extends HttpServlet{
                 int price = m.getInt("price");
 
                 out.println("Name: " + productName);
-                out.println(("PRice: $" + price));
+                out.println(("Price: $" + price));
             }
             m.close();
-//            if (m == 0)
-//                out.println("inserted successfully : "+sql);
-//            else
-//                out.println("insertion failed");
             conn.close();
         } catch (Exception e) {
             out.println(e);
