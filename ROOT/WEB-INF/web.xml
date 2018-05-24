@@ -47,13 +47,13 @@
   </servlet-mapping>
 
     <servlet>
-        <servlet-name>newDBTest</servlet-name>
-        <servlet-class>newDBTest</servlet-class>
+        <servlet-name>productPage</servlet-name>
+        <servlet-class>productPage</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>newDBTest</servlet-name>
-        <url-pattern>/newDBTest</url-pattern>
+        <servlet-name>productPage</servlet-name>
+        <url-pattern>/productPage</url-pattern>
     </servlet-mapping>
 
 </web-app>
