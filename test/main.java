@@ -12,6 +12,7 @@ public class main extends HttpServlet{
         String url = "jdbc:mysql:@matt-smith-v4.ics.uci.edu";
         String user = "inf124db057";
         String password = "wRd8MJP2XGWa";
+        
 
         String sql = "SELECT * FROM `PRODUCTS` WHERE pid = 432231";
         response.setContentType("text/html");
