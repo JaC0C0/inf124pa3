@@ -30,7 +30,7 @@ public class main extends HttpServlet{
 //        }
 //    }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String url = "jdbc:mysql:@matt-smith-v4.ics.uci.edu";
         String user = "inf124db057";
         String password = "wRd8MJP2XGWa";
@@ -51,5 +51,9 @@ public class main extends HttpServlet{
         } catch (Exception e) {
             System.err.println(e);
         }
+    }
+
+    public void destroy() {
+
     }
 }
