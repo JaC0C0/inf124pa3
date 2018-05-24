@@ -6,6 +6,8 @@ import java.sql.*;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import com.mysql.jdbc.Driver;
+import java.sql.*;
 
 public class main extends HttpServlet{
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
@@ -17,7 +19,7 @@ public class main extends HttpServlet{
         PrintWriter out = response.getWriter();
         try {
     //            DriverManager.registerDriver(new org.gjt.mm.mysql.Driver());
-            Class.forName ("org.gjt.mm.mysql.Driver");
+            Class.forName ("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, user, password);
             Statement st = conn.createStatement();
             int m = st.executeUpdate(sql);
