@@ -45,7 +45,7 @@ public class productPage extends HttpServlet{
                 String material = rs.getString("material");
                 String description = rs.getString("description");
                 String img = rs.getString("img");
-                String newImg = img.replace("\"", "/");
+                String newImg = img.replace("", "/");
                 int inv = rs.getInt("inv");
                 int pid = rs.getInt("pid");
 
@@ -53,7 +53,7 @@ public class productPage extends HttpServlet{
                 out.println("   <tr class = 'itemBox'>" +
                         "       <td class = 'picCol'>" +
                         "           <a href='item.php?pid=" + pid + ">" +
-                        "           <img src='" + newImg + "' alt=" + name + " class='fill grow'>" +
+                        "           <img src='" + "https://orig00.deviantart.net/0c23/f/2011/235/1/3/aluminum_foil_oriental_dragon_by_reptanglian-d47l2wd.jpg" + "' alt=" + name + " class='fill grow'>" +
                         "           </a>" +
                         "       </td>" +
                         "       <td class = 'descCol'><p>" + name + "</p><p>Price: $" + price + "</p><p>Material: " + material + "</p></td>" +
