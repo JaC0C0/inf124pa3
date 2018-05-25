@@ -45,7 +45,7 @@ public class productPage extends HttpServlet{
                 String material = rs.getString("material");
                 String description = rs.getString("description");
                 String img = rs.getString("img");
-                String newImg = img.replace(" ", "/");
+                String newImg = img.replace("\"", "/");
                 int inv = rs.getInt("inv");
                 int pid = rs.getInt("pid");
 
