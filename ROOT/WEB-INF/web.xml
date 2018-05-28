@@ -46,6 +46,16 @@
      <url-pattern>/main</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+      <servlet-name>item</servlet-name>
+      <servlet-class>item</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+     <servlet-name>item</servlet-name>
+     <url-pattern>/item</url-pattern>
+  </servlet-mapping>
+
     <servlet>
         <servlet-name>productPage</servlet-name>
         <servlet-class>productPage</servlet-class>

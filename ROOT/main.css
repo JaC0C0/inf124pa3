@@ -1,0 +1,154 @@
+a:link {
+  color: #f2b632;
+}
+a:visited {
+  color: #f2b632;
+}
+a:hover {
+  color: #f2b632;
+}
+table {
+  table-layout: fixed;
+  width: 100%;
+  padding: 0px 21px;
+  border-spacing: 0px 14px;
+}
+ul {
+  list-style: none;
+  font-size: 1.1em;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+}
+.picCol {
+  width: 200px;
+  background-color: #252839;
+  text-align: right;
+  padding: 3px;
+  border-left: 7px solid #f2b632;
+}
+.descCol {
+  width: 100%;
+  color: white;
+  background-color: #252839;
+  padding: 7px;
+}
+* {
+   font-family: Helvetica;
+  }
+
+*:hover{
+    color: #E1F5FE;
+  }
+p {
+    font-size: 1.1em;
+    color: #b5b5b7;
+  }
+body {
+         /*background: url('http://www.hapco.com/wp-content/uploads/2014/10/aluminum-bg-1920x1080.jpg');*/
+  background-color: #677077;
+  background-repeat: round;
+}
+img {
+  width: 150px;
+  height: 150px;
+}
+input {
+  font-size: 1.1em;
+  padding: 2px;
+}
+.topHeader {
+  font-size: 1.7em;
+}
+.menu {
+  display: block;
+  width: 25%;
+}
+.profile {
+    width: 200px;
+    height: auto;
+    transition: all .2s ease-in-out;
+}
+
+.profile:hover {
+    transform: scale(1.5);
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    border: none;
+}
+.fill {
+  object-fit: contain;
+}
+.linput {
+    width: 200%;
+}
+
+.sinput {
+    width: 50%;
+}
+
+.grow {
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+}
+
+.grow:hover { 
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+input {
+    width: 100%;
+    display: block;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+input:invalid {
+  border-left: 7px solid #ED7A8B;
+  background-color: #b5b5b7;
+}
+
+input:valid {
+  border-left: 7px solid #252839;
+  background-color: #b5b5b7;
+}
+#purchase {
+  border: 0px;
+  width: 25%;
+  background-color: #f2b632;
+  font-size: 1.4em;
+  padding: 4px;
+  color: #252839;
+  border-bottom: 7px solid #677077;
+}
+#purchase:hover {
+  background-color: #F9A65B;
+}
+.bttn {
+  border: 0px;
+  width: 25%;
+  background-color: #f2b632;
+  font-size: 1.1em;
+  color: #252839;
+}
+.bttn:hover {
+  background-color: #F9A65B;
+}
+div {
+    width: 25%;
+    display: inline-block;
+    color: white;
+}
+
+div label {
+    display: block;
+}
+
+label {
+  color: white;
+}
