@@ -58,6 +58,7 @@ public class productPage extends HttpServlet{
                         "       <td class = 'descCol'><p>" + name + "</p><p>Price: $" + price + "</p><p>Material: " + material + "</p></td>" +
                         "       </tr>");
             }
+            out.println("<h2>Recently Viewed Items</h2><br>");
             rd.include(request, response);
             rs.close();
             conn.close();

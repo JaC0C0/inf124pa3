@@ -58,7 +58,6 @@ public class history extends HttpServlet {
             if (recentItems[0] == 0) {
                 out.println("<p>No recent items</p>");
             } else {
-                out.println("<p>Recent Items</p><br>");
                 for (int i = 0; i < 5; i++) {
                     if (recentItems[i] == 0) {
                         return;
