@@ -50,7 +50,7 @@ public class productPage extends HttpServlet{
                 int inv = rs.getInt("inv");
                 int pid = rs.getInt("pid");
 
-
+                out.println(pid);
                 out.println("   <tr class = 'itemBox'>" +
                         "       <td class = 'picCol'>" +
                         "           <a href='item?pid=" + pid + "'>" +
