@@ -14,7 +14,6 @@ public class confirmation extends HttpServlet {
                 "        <title>Foil Me, Daddy</title>\n" +
                 "        <!-- link to main stylesheet -->\n" +
                 "        <link rel=\"stylesheet\" type=\"text/css\" href=\"main.css\">\n" +
-                "        <?php require 'purchase.php';?>\n" +
                 "\n" +
                 "    </head>\n" +
                 "    <span id=\"insertHere\"></span>\n" +
