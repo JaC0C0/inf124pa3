@@ -26,7 +26,8 @@ public class history extends HttpServlet {
         boolean found = false;
         for (int i = 0; i < recentItems.length; i++) {
             if (recentItems[0] == pid) {
-                return;
+                found = true;
+                break;
             } else if (recentItems[i] == pid) {
                 for (int j = i - 1; j >= 0; j--) {
                     recentItems[j + 1] = recentItems[j];
