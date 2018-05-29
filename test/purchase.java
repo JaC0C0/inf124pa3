@@ -42,7 +42,7 @@ public class purchase extends HttpServlet {
             String zip = request.getParameter("zip");
             String cardNum= request.getParameter("cardNum");
             String cvv = request.getParameter("cvv");
-            String ship = request.getParameter("ship");
+            String ship = request.getParameter("shipping");
 
             for (int i = 0; i < cart.size(); i++) {
                 String sql = "INSERT INTO `Orders` (`oid`, `pid`, `quantity`, `firstName`, `lastName`, `phoneNum`, `addr`, `city`, `zip`, `cardNum`, `cvv`, `ship`) VALUES ('" + maxId + "','" + cart.get(i).get(0) + "', '" + cart.get(i).get(1) + "', '" + fName + "', '" + lName + "', '" + phone + "', '" + addr + "', '" + city + "', '" + zip + "', '" + cardNum + "', '" + cvv + "', '" + ship + "')";
