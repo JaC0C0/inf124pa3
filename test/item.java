@@ -15,8 +15,6 @@ public class item extends HttpServlet{
         response.setContentType("text/html");
         String css = request.getContextPath() + "/webfiles/main.css";
         PrintWriter out = response.getWriter();
-        out.println(sql);
-        /*
         try {
             out.println("<html>\n" +
                     "    <head>\n" +
@@ -35,8 +33,7 @@ public class item extends HttpServlet{
                     "    </nav>\n" +
                     "    <a href=\"Store.php\">\n" +
                     "    <h2>Store</h2>\n" +
-                    "    </a>\n" +
-                    "    <table>");
+                    "    </a>\n");
             Class.forName ("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, user, password);
             Statement st = conn.createStatement();
@@ -51,21 +48,16 @@ public class item extends HttpServlet{
                 int inv = rs.getInt("inv");
                 int pid = rs.getInt("pid");
 
-                out.println("   <tr class = 'itemBox'>" +
-                        "       <td class = 'picCol'>" +
-                        "           <a href='item.php?pid=" + pid + ">" +
-                        "           <img src='" + img + "' alt=" + name + " class='fill grow'>" +
-                        "           </a>" +
-                        "       </td>" +
-                        "       <td class = 'descCol'><p>" + name + "</p><p>Price: $" + price + "</p><p>Material: " + material + "</p></td>" +
-                        "       </tr>");
+                out.println("    <h4>" + name + "</h4>\n" +
+                        "    <img src='" + img + "' alt='" + name + "' class='fill'>\n" +
+                        "    <p>" + name + "</p><p>Price: $" + price + "</p><p>Material: " + material + "</p>\n");
             }
             rs.close();
             conn.close();
         } catch (Exception e) {
             out.println(e);
         }
-        */
+
     }
 
     public void destroy() {
