@@ -14,7 +14,7 @@ public class history extends HttpServlet {
         String password = "wRd8MJP2XGWa";
         HttpSession session = request.getSession();
         int pid = (int)session.getAttribute("pid");
-        if (null == session.getAttribute("recentViewed")) {
+        if (session.getAttribute("recentViewed") == null) {
             int[] array = new int[]{0,0,0,0,0};
             session.setAttribute("recentViewed", array);
         }
