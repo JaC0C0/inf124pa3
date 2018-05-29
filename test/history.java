@@ -72,10 +72,10 @@ public class history extends HttpServlet {
                         String description = rs.getString("description");
                         String img = response.encodeURL(rs.getString("img"));
                         int inv = rs.getInt("inv");
-//                        int pid = rs.getInt("pid");
+                        int newpid = rs.getInt("pid");
                         out.println("   <tr class = 'itemBox'>" +
                                 "       <td class = 'picCol'>" +
-                                "           <a href='item?pid=" + pid + "'>" +
+                                "           <a href='item?pid=" + newpid + "'>" +
                                 "           <img src='" + img + "' alt=" + name + " class='fill grow'>" +
                                 "           </a>" +
                                 "       </td>" +
