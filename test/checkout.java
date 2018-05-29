@@ -29,8 +29,7 @@ public class checkout extends HttpServlet {
                 "            <li><a href=\"confirmation.html\">Order Confirmations</a></li>\n" +
                 "        </ul>\n" +
                 "    </nav>\n" +
-                "    <a href=\"productPage\">\n" +
-                "    <h2>Store</h2>\n" +
+                "    <h2>Cart</h2>\n" +
                 "    </a>" +
                 "<p>Please enter all fields outlined in red</p>" +
                 "<form action=\"purchase.php\" method=\"POST\">'" +
