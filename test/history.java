@@ -14,10 +14,10 @@ public class history extends HttpServlet {
         String password = "wRd8MJP2XGWa";
         HttpSession session = request.getSession();
         int pid = (int)session.getAttribute("pid");
-        if (session.getAttribute("recentViewed") == null) {
-            int[] array = new int[]{0,0,0,0,0};
-            session.setAttribute("recentViewed", array);
-        }
+//        if (session.getAttribute("recentViewed") == null) {
+//            int[] array = new int[]{0,0,0,0,0};
+//            session.setAttribute("recentViewed", array);
+//        }
         int[] recentItems = (int[])session.getAttribute("recentViewed");
         boolean found = false;
         for (int i = 0; i < recentItems.length; i++) {
