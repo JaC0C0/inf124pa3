@@ -64,7 +64,7 @@ public class item extends HttpServlet{
                         "<div>\n" +
                         "    <label>Quantity (1-999):</label>\n" +
                         "    <input type=\"text\" name=\"quantity\" required pattern=\"[0-9]{1,3}\">\n" +
-                        "</div><br>\n" +
+                        "</div><br><br>\n" +
                         "<input id='addToCart' class='bttn' type='submit' value='Add to cart' name='submit'>\n" +
                         "</form>");
             }
