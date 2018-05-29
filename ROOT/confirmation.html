@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Foil Me, Daddy</title>
+        <!-- link to main stylesheet -->
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <?php require 'purchase.php';?>
+
+    </head>
+    <a href="Store.php"  class="topHeader"><h1>Foil Me, <em>Daddy</em></h1></a>
+    <nav class="menu">
+        <ul>
+            <li><a href="Store.php">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="confirmation.html">Order Confirmations</a></li>
+        </ul>
+    </nav>
+    <a href="Store.php">
+    <h2>Store</h2>
+    </a>
+
+<meta http-equiv="Cache-control" content="no-store">
+<form>
+    <label>Enter Order Id:</label>
+    <input class="sinput"id='oid' type="text" name="oid"  required>
+</form>
+<button class="bttn" id="ajaxButton" type="button">Check Order</button>
+<span id="insertHere"></span>
+
+<script>
+(function() {
+  var httpRequest;
+  document.getElementById("ajaxButton").addEventListener('click', makeRequest);
+
+  function makeRequest() {
+    httpRequest = new XMLHttpRequest();
+
+    if (!httpRequest) {
+      alert('Giving up :( Cannot create an XMLHTTP instance');
+      return false;
+    }
+    httpRequest.onreadystatechange = alertContents;
+    httpRequest.open('GET', 'orderGet.php?oid='+document.getElementById('oid').value);
+    httpRequest.send();
+  }
+
+  function alertContents() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+      if (httpRequest.status === 200) {
+        var el = document.getElementById('insertHere');
+        el.innerHTML = httpRequest.responseText;
+      } else {
+        alert('There was a problem with the request.');
+      }
+    }
+  }
+})();
+</script>
