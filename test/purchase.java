@@ -46,7 +46,7 @@ public class purchase extends HttpServlet {
 
             for (int i = 0; i < cart.size(); i++) {
                 String sql = "INSERT INTO `Orders` (`oid`, `pid`, `quantity`, `firstName`, `lastName`, `phoneNum`, `addr`, `city`, `zip`, `cardNum`, `cvv`, `ship`) VALUES ('" + maxId + "','" + cart.get(i).get(0) + "', '" + cart.get(i).get(1) + "', '" + fName + "', '" + lName + "', '" + phone + "', '" + addr + "', '" + city + "', '" + zip + "', '" + cardNum + "', '" + cvv + "', '" + ship + "')";
-                ResultSet rs = st.executeQuery(sql);
+                st.executeUpdate(sql);
             }
             session.setAttribute("oid", maxId);
             conn.close();
