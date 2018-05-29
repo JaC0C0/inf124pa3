@@ -15,7 +15,8 @@ public class history extends HttpServlet {
         HttpSession session = request.getSession();
         int pid = (int)session.getAttribute("pid");
         if (null == session.getAttribute("recentViewed")) {
-            session.setAttribute("recentViewed", new int[5]);
+            int[] array = new int[]{0,0,0,0,0};
+            session.setAttribute("recentViewed", array);
         }
         int[] recentItems = (int[])session.getAttribute("recentViewed");
         boolean found = false;
