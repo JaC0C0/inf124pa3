@@ -4,10 +4,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 public class checkout extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String url = "jdbc:mysql://matt-smith-v4.ics.uci.edu/inf124db057?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        String user = "inf124db057";
+        String password = "wRd8MJP2XGWa";
         HttpSession session = request.getSession();
+        ArrayList<ArrayList<Integer>> cart = (ArrayList<ArrayList<Integer>>)session.getAttribute("cart");
         if (session.getAttribute("pid") == null) {
             return;
         }
@@ -30,8 +39,43 @@ public class checkout extends HttpServlet {
                 "        </ul>\n" +
                 "    </nav>\n" +
                 "    <h2>Cart</h2>\n" +
-                "    </a>" +
-                "<p>Please enter all fields outlined in red</p>" +
+                "    </a>");
+        if (cart != null) {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection conn = DriverManager.getConnection(url, user, password);
+                Statement st = conn.createStatement();
+
+                out.println("<table>");
+                for (int i = 0; i < cart.size(); i++) {
+                    String sql = "SELECT * FROM `Products` WHERE pid = " + cart.get(i).get(0);
+                    ResultSet rs = st.executeQuery(sql);
+                    while (rs.next()) {
+                        String name = rs.getString("name");
+                        int price = rs.getInt("price");
+                        String material = rs.getString("material");
+                        String description = rs.getString("description");
+                        String img = response.encodeURL(rs.getString("img"));
+                        int inv = rs.getInt("inv");
+                        int newpid = rs.getInt("pid");
+                        out.println("   <tr class = 'itemBox'>" +
+                                "       <td class = 'picCol'>" +
+                                "           <a href='item?pid=" + newpid + "'>" +
+                                "           <img src='" + img + "' alt=" + name + " class='fill grow'>" +
+                                "           </a>" +
+                                "       </td>" +
+                                "       <td class = 'descCol'><p>" + name + "</p><p>Price: $" + price + "</p><p>Material: " + material + "</p><p>Quantity: " + cart.get(i).get(1) + "</p></td>" +
+                                "       </tr>");
+                    }
+                    rs.close();
+                }
+                out.println("</table>");
+                conn.close();
+            } catch (Exception e) {
+                out.println(e);
+            }
+        }
+        out.println("<p>Please enter all fields outlined in red</p>" +
                 "<form action=\"purchase.php\" method=\"POST\">'" +
                 "        <div>\n" +
                 "            <label>First Name:</label>\n" +
