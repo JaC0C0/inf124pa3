@@ -20,8 +20,10 @@ public class history extends HttpServlet {
             int[] array = new int[]{0,0,0,0,0};
             session.setAttribute("recentViewed", array);
         }
+        out.println("1");
         int[] recentItems = (int[])session.getAttribute("recentViewed");
         boolean found = false;
+        out.println("2");
         for (int i = 0; i < recentItems.length; i++) {
             if (recentItems[0] == pid) {
                 break;
@@ -41,6 +43,7 @@ public class history extends HttpServlet {
                 break;
             }
         }
+        out.println("3");
         if (!found) {
             for (int j = 3; j >= 0; j--) {
                 recentItems[j + 1] = recentItems[j];
@@ -49,6 +52,7 @@ public class history extends HttpServlet {
         }
         session.setAttribute("recentViewed", recentItems);
         try {
+            out.println("4");
             Class.forName ("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, user, password);
             Statement st = conn.createStatement();
