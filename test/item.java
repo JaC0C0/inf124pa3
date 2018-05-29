@@ -12,9 +12,17 @@ public class item extends HttpServlet{
         String user = "inf124db057";
         String password = "wRd8MJP2XGWa";
         String sql = "SELECT * FROM `Products` WHERE pid = " + request.getParameter("pid");
+        HttpSession session = request.getSession();
+        session.setAttribute("pid",request.getParameter("pid"));
+        PrintWriter out = response.getWriter();
+//        RequestDispatcher rd = request.getRequestDispatcher("history");
+//        try{
+//            rd.include(request,response);
+//        } catch (Exception e) {
+//            out.println(e);
+//        }
         response.setContentType("text/html");
         String css = request.getContextPath() + "/webfiles/main.css";
-        PrintWriter out = response.getWriter();
         try {
             out.println("<html>\n" +
                     "    <head>\n" +

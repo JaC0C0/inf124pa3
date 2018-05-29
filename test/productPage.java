@@ -15,7 +15,7 @@ public class productPage extends HttpServlet{
         response.setContentType("text/html");
 //        String css = request.getContextPath() + "/webfiles/main.css";
         PrintWriter out = response.getWriter();
-//        RequestDispatcher rd = request.getRequestDispatcher();
+        RequestDispatcher rd = request.getRequestDispatcher("history");
         try {
             out.println("<html>\n" +
                     "    <head>\n" +
@@ -49,8 +49,6 @@ public class productPage extends HttpServlet{
 //                String newImg = img.replace("", "/");
                 int inv = rs.getInt("inv");
                 int pid = rs.getInt("pid");
-
-                out.println(pid);
                 out.println("   <tr class = 'itemBox'>" +
                         "       <td class = 'picCol'>" +
                         "           <a href='item?pid=" + pid + "'>" +
@@ -59,6 +57,7 @@ public class productPage extends HttpServlet{
                         "       </td>" +
                         "       <td class = 'descCol'><p>" + name + "</p><p>Price: $" + price + "</p><p>Material: " + material + "</p></td>" +
                         "       </tr>");
+                rd.include(request, response);
             }
             rs.close();
             conn.close();
