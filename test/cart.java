@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class cart extends HttpServlet{
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
         HttpSession session = request.getSession();
         ArrayList<ArrayList<Integer>> cart = new ArrayList<ArrayList<Integer>>();
 
