@@ -66,4 +66,14 @@
         <url-pattern>/productPage</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>history</servlet-name>
+        <servlet-class>history</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>history</servlet-name>
+        <url-pattern>/history</url-pattern>
+    </servlet-mapping>
+
 </web-app>

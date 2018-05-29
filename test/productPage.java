@@ -57,8 +57,8 @@ public class productPage extends HttpServlet{
                         "       </td>" +
                         "       <td class = 'descCol'><p>" + name + "</p><p>Price: $" + price + "</p><p>Material: " + material + "</p></td>" +
                         "       </tr>");
-                rd.include(request, response);
             }
+            rd.include(request, response);
             rs.close();
             conn.close();
         } catch (Exception e) {
