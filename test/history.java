@@ -10,7 +10,6 @@ import java.util.Arrays;
 public class history extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter out = response.getWriter();
-        out.println("hello");
         String url = "jdbc:mysql://matt-smith-v4.ics.uci.edu/inf124db057?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         String user = "inf124db057";
         String password = "wRd8MJP2XGWa";
@@ -19,18 +18,15 @@ public class history extends HttpServlet {
             return;
         }
         int pid = (int) session.getAttribute("pid");
-        out.println("0");
         if (session.getAttribute("recentViewed") == null) {
             int[] array = new int[]{0,0,0,0,0};
             session.setAttribute("recentViewed", array);
         }
-        out.println("1");
         int[] recentItems = (int[])session.getAttribute("recentViewed");
         boolean found = false;
-        out.println("2");
         for (int i = 0; i < recentItems.length; i++) {
             if (recentItems[0] == pid) {
-                break;
+                return;
             } else if (recentItems[i] == pid) {
                 for (int j = i - 1; j >= 0; j--) {
                     recentItems[j + 1] = recentItems[j];
@@ -47,7 +43,6 @@ public class history extends HttpServlet {
                 break;
             }
         }
-        out.println("3");
         if (!found) {
             for (int j = 3; j >= 0; j--) {
                 recentItems[j + 1] = recentItems[j];
@@ -56,7 +51,6 @@ public class history extends HttpServlet {
         }
         session.setAttribute("recentViewed", recentItems);
         try {
-            out.println("4");
             Class.forName ("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, user, password);
             Statement st = conn.createStatement();
