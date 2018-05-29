@@ -53,7 +53,7 @@ public class productPage extends HttpServlet{
 
                 out.println("   <tr class = 'itemBox'>" +
                         "       <td class = 'picCol'>" +
-                        "           <a href='item?pid='" + pid + ">" +
+                        "           <a href='item?pid=" + pid + "'>" +
                         "           <img src='" + img + "' alt=" + name + " class='fill grow'>" +
                         "           </a>" +
                         "       </td>" +
