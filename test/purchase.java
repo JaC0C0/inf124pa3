@@ -26,6 +26,7 @@ public class purchase extends HttpServlet {
             Statement st = conn.createStatement();
             String maxQuery = "SELECT MAX( oid ) as oid FROM `Orders`;";
             ResultSet maxIdSet = st.executeQuery(maxQuery);
+            maxIdSet.next();
             int maxId = maxIdSet.getInt("oid");
             if (maxId >= 0){
                 maxId += 1;
