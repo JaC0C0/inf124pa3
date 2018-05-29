@@ -58,13 +58,14 @@ public class history extends HttpServlet {
             if (recentItems[0] == 0) {
                 out.println("<p>No recent items</p>");
             } else {
+                out.println("<h2>Recently Viewed Items</h2>");
+                out.println("<table>");
                 for (int i = 0; i < 5; i++) {
                     if (recentItems[i] == 0) {
                         return;
                     }
                     String sql = "SELECT * FROM `Products` WHERE pid = " + recentItems[i];
                     ResultSet rs = st.executeQuery(sql);
-                    out.println("   <h2>Recently Viewed Items</h2>");
                     while (rs.next()) {
                         String name = rs.getString("name");
                         int price = rs.getInt("price");
@@ -84,6 +85,7 @@ public class history extends HttpServlet {
                     }
                     rs.close();
                 }
+                out.println("</table>");
             }
             conn.close();
         } catch (Exception e) {
