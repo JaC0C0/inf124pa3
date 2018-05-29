@@ -13,7 +13,7 @@ public class productPage extends HttpServlet{
         String password = "wRd8MJP2XGWa";
         String sql = "SELECT * FROM `Products`";
         response.setContentType("text/html");
-        String css = request.getContextPath() + "/webfiles/main.css";
+//        String css = request.getContextPath() + "/webfiles/main.css";
         PrintWriter out = response.getWriter();
 //        RequestDispatcher rd = request.getRequestDispatcher();
         try {
@@ -53,7 +53,7 @@ public class productPage extends HttpServlet{
 
                 out.println("   <tr class = 'itemBox'>" +
                         "       <td class = 'picCol'>" +
-                        "           <a href='item.php?pid=" + pid + ">" +
+                        "           <a href='item.php?pid='" + pid + ">" +
                         "           <img src='" + img + "' alt=" + name + " class='fill grow'>" +
                         "           </a>" +
                         "       </td>" +
