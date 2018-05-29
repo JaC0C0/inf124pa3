@@ -47,12 +47,14 @@ public class checkout extends HttpServlet {
                 Statement st = conn.createStatement();
 
                 out.println("<table>");
+                float totalPrice = 0;
                 for (int i = 0; i < cart.size(); i++) {
                     String sql = "SELECT * FROM `Products` WHERE pid = " + cart.get(i).get(0);
                     ResultSet rs = st.executeQuery(sql);
                     while (rs.next()) {
                         String name = rs.getString("name");
                         int price = rs.getInt("price");
+                        totalPrice += price * cart.get(i).get(0);
                         String material = rs.getString("material");
                         String description = rs.getString("description");
                         String img = response.encodeURL(rs.getString("img"));
@@ -71,6 +73,7 @@ public class checkout extends HttpServlet {
                 }
                 out.println("</table>");
                 conn.close();
+                out.println("<h2>Total Price: " + totalPrice + "</h2>");
             } catch (Exception e) {
                 out.println(e);
             }
