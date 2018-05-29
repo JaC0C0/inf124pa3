@@ -47,7 +47,7 @@ public class checkout extends HttpServlet {
                 Statement st = conn.createStatement();
 
                 out.println("<table>");
-                float totalPrice = 0;
+                int totalPrice = 0;
                 for (int i = 0; i < cart.size(); i++) {
                     String sql = "SELECT * FROM `Products` WHERE pid = " + cart.get(i).get(0);
                     ResultSet rs = st.executeQuery(sql);
