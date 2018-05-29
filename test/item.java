@@ -42,7 +42,7 @@ public class item extends HttpServlet{
                     "    <a href=\"Store.php\">\n" +
                     "    <h2>Store</h2>\n" +
                     "    </a>\n");
-            Class.forName ("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, user, password);
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -59,8 +59,15 @@ public class item extends HttpServlet{
                 out.println("    <h4>" + name + "</h4>\n" +
                         "    <img src='" + img + "' alt='" + name + "' class='fill'>\n" +
                         "    <p>" + description + "</p><p>Price: $" + price + "</p><p>Material: " + material + "</p>\n");
+                out.println("<form action='cart' method='post'>\n" +
+                        "<input type='hidden' name='pid' value='" + pid + "'/>\n" +
+                        "<div>\n" +
+                        "    <label>Quantity (1-999):</label>\n" +
+                        "    <input type=\"text\" name=\"quantity\" required pattern=\"[0-9]{1,3}\">\n" +
+                        "</div><br>\n" +
+                        "<input id='addToCart' class='bttn' type='submit' value='Add to cart' name='submit'>\n" +
+                        "</form>");
             }
-            out.println("<input id='purchase' class='bttn' type='submit' value='Add to cart' name='submit'>");
             rs.close();
             conn.close();
         } catch (Exception e) {
