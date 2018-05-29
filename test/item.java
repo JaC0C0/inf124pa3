@@ -31,15 +31,15 @@ public class item extends HttpServlet{
                     "        <link rel=\"stylesheet\" type=\"text/css\" href=\"main.css\">\n" +
                     "    </head>\n" +
                     "\n" +
-                    "    <a href=\"Store.php\" class=\"topHeader\"><h1>Foil Me, <em>Daddy</em></h1></a>\n" +
+                    "    <a href=\"productPage\" class=\"topHeader\"><h1>Foil Me, <em>Daddy</em></h1></a>\n" +
                     "    <nav class=\"menu\">\n" +
                     "        <ul>\n" +
-                    "            <li><a href=\"Store.php\">Home</a></li>\n" +
+                    "            <li><a href=\"productPage\">Home</a></li>\n" +
                     "            <li><a href=\"about.html\">About Us</a></li>\n" +
                     "            <li><a href=\"confirmation.html\">Order Confirmations</a></li>\n" +
                     "        </ul>\n" +
                     "    </nav>\n" +
-                    "    <a href=\"Store.php\">\n" +
+                    "    <a href=\"productPage\">\n" +
                     "    <h2>Store</h2>\n" +
                     "    </a>\n");
             Class.forName("com.mysql.jdbc.Driver");
