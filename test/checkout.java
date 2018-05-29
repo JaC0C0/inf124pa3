@@ -34,9 +34,6 @@ public class checkout extends HttpServlet {
                 "    </a>" +
                 "<p>Please enter all fields outlined in red</p>" +
                 "<form action=\"purchase.php\" method=\"POST\">'" +
-                "    <div>" +
-                "    <input type=\"text\" name=\"pid\" value=\"" + session.getAttribute("pid") + "required>" +
-                "</div>\n" +
                 "        <div>\n" +
                 "            <label>Quantity (1-999):</label>\n" +
                 "            <input type=\"text\" name=\"quantity\" required pattern=\"[0-9]{1,3}\">\n" +
