@@ -66,6 +66,16 @@
       <url-pattern>/cart</url-pattern>
   </servlet-mapping>
 
+<servlet>
+    <servlet-name>purchase</servlet-name>
+    <servlet-class>purchase</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>purchase</servlet-name>
+    <url-pattern>/purchase</url-pattern>
+</servlet-mapping>
+
     <servlet>
         <servlet-name>productPage</servlet-name>
         <servlet-class>productPage</servlet-class>
