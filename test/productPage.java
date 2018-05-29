@@ -8,9 +8,6 @@ import java.sql.*;
 
 public class productPage extends HttpServlet{
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        int[] array = new int[]{0,0,0,0,0};
-        HttpSession session = request.getSession();
-        session.setAttribute("recentViewed", array);
         String url = "jdbc:mysql://matt-smith-v4.ics.uci.edu/inf124db057?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         String user = "inf124db057";
         String password = "wRd8MJP2XGWa";
