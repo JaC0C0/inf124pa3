@@ -79,7 +79,7 @@ public class checkout extends HttpServlet {
             }
         }
         out.println("<p>Please enter all fields outlined in red</p>" +
-                "<form action=\"purchase.php\" method=\"POST\">'" +
+                "<form action=\"purchase\" method=\"POST\">'" +
                 "        <div>\n" +
                 "            <label>First Name:</label>\n" +
                 "            <input type=\"text\" name=\"firstname\"  required>\n" +
