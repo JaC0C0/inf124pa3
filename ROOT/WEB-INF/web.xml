@@ -105,4 +105,14 @@
         <url-pattern>/checkout</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>confirmation</servlet-name>
+        <servlet-class>confirmation</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>confirmation</servlet-name>
+        <url-pattern>/confirmation</url-pattern>
+    </servlet-mapping>
+
 </web-app>

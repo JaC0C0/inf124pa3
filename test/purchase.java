@@ -49,8 +49,8 @@ public class purchase extends HttpServlet {
             }
             session.setAttribute("oid", maxId);
             conn.close();
-            RequestDispatcher rd = request.getRequestDispatcher("orderConf");
-            rd.include(request, response);
+            RequestDispatcher rd = request.getRequestDispatcher("confirmation");
+            rd.forward(request, response);
         } catch (Exception e) {
             out.println(e);
         }
