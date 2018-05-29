@@ -27,6 +27,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 3px;
   border-left: 7px solid #f2b632;
 }
+.recent {
+    color: #252839;
+    background-color: #b5b5b7;
+}
 .descCol {
   width: 100%;
   color: white;

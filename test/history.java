@@ -73,7 +73,7 @@ public class history extends HttpServlet {
                         int inv = rs.getInt("inv");
                         int newpid = rs.getInt("pid");
                         out.println("   <tr class = 'itemBox'>" +
-                                "       <td class = 'picCol'>" +
+                                "       <td class = 'recent'>" +
                                 "           <a href='item?pid=" + newpid + "'>" +
                                 "           <img src='" + img + "' alt=" + name + " class='fill grow'>" +
                                 "           </a>" +
