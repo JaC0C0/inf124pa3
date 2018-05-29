@@ -54,7 +54,7 @@ public class checkout extends HttpServlet {
                     while (rs.next()) {
                         String name = rs.getString("name");
                         int price = rs.getInt("price");
-                        totalPrice += price * cart.get(i).get(0);
+                        totalPrice += price * cart.get(i).get(1);
                         String material = rs.getString("material");
                         String description = rs.getString("description");
                         String img = response.encodeURL(rs.getString("img"));
@@ -73,7 +73,7 @@ public class checkout extends HttpServlet {
                 }
                 out.println("</table>");
                 conn.close();
-                out.println("<h2>Total Price: " + totalPrice + "</h2>");
+                out.println("<h2>Total Price: $" + totalPrice + "</h2>");
             } catch (Exception e) {
                 out.println(e);
             }
