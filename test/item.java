@@ -50,8 +50,9 @@ public class item extends HttpServlet{
 
                 out.println("    <h4>" + name + "</h4>\n" +
                         "    <img src='" + img + "' alt='" + name + "' class='fill'>\n" +
-                        "    <p>" + name + "</p><p>Price: $" + price + "</p><p>Material: " + material + "</p>\n");
+                        "    <p>" + description + "</p><p>Price: $" + price + "</p><p>Material: " + material + "</p>\n");
             }
+            out.println("<input id='purchase' class='bttn' type='submit' value='Add to cart' name='submit'>");
             rs.close();
             conn.close();
         } catch (Exception e) {
