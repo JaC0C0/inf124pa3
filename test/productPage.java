@@ -29,6 +29,7 @@ public class productPage extends HttpServlet{
                     "        <ul>\n" +
                     "            <li><a href=\"productPage\">Home</a></li>\n" +
                     "            <li><a href=\"about.html\">About Us</a></li>\n" +
+                    "            <li><a href=\"checkout\">Checkout</a></li>\n" +
                     "            <li><a href=\"confirmation.html\">Order Confirmations</a></li>\n" +
                     "        </ul>\n" +
                     "    </nav>\n" +
