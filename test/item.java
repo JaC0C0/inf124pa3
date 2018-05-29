@@ -11,7 +11,7 @@ public class item extends HttpServlet{
         String url = "jdbc:mysql://matt-smith-v4.ics.uci.edu/inf124db057?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         String user = "inf124db057";
         String password = "wRd8MJP2XGWa";
-        String sql = "SELECT * FROM `Products` WHERE pid = " + request.getRequestURI();
+        String sql = "SELECT * FROM `Products` WHERE pid = " + request.getParameter("pid");
         response.setContentType("text/html");
         String css = request.getContextPath() + "/webfiles/main.css";
         PrintWriter out = response.getWriter();
