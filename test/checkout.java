@@ -35,10 +35,6 @@ public class checkout extends HttpServlet {
                 "<p>Please enter all fields outlined in red</p>" +
                 "<form action=\"purchase.php\" method=\"POST\">'" +
                 "        <div>\n" +
-                "            <label>Quantity (1-999):</label>\n" +
-                "            <input type=\"text\" name=\"quantity\" required pattern=\"[0-9]{1,3}\">\n" +
-                "        </div><br>\n" +
-                "        <div>\n" +
                 "            <label>First Name:</label>\n" +
                 "            <input type=\"text\" name=\"firstname\"  required>\n" +
                 "        </div>\n" +
@@ -84,53 +80,6 @@ public class checkout extends HttpServlet {
                 "        <input id='purchase' class=\"bttn\" type=\"submit\" value=\"Submit\" name=\"submit\">\n" +
                 "        <input class=\"bttn\"type=\"reset\" value=\"Reset\">\n" +
                 "        <span id=\"insertHere\"></span>\n" +
-                "    <script>\n" +
-                "    (function() {\n" +
-                "        var httpRequest;\n" +
-                "        document.getElementById(\"zip\").addEventListener('keyup', findCity);\n" +
-                "\tdocument.getElementById(\"phone\").addEventListener('keydown', phoneThing); \n" +
-                "\n" +
-                "\tfunction phoneThing(event) {\n" +
-                "        if (event.which > 57) {\n" +
-                "            event.preventDefault();\n" +
-                "        } else if (event.which < 48) {\n" +
-                "            if (key != 8 && key != 9 && key != 37 && key != 39 ) {\n" +
-                "                e.preventDefault();\n" +
-                "            }\n" +
-                "        } else {\n" +
-                "            var phone = document.getElementById('phone').value;\n" +
-                "            if (phone.length === 3 || phone.length === 7)\n" +
-                "            {\n" +
-                "                    document.getElementById(\"phone\").value += \"-\";\n" +
-                "                }\n" +
-                "            }\n" +
-                "\t}\n" +
-                "\n" +
-                "        function findCity() {\n" +
-                "        httpRequest = new XMLHttpRequest();\n" +
-                "        var zip = parseInt(document.getElementById(\"zip\").value);\n" +
-                "        if (!httpRequest) {\n" +
-                "            alert('Giving up :( Cannot create an XMLHTTP instance');\n" +
-                "            return false;\n" +
-                "        }\n" +
-                "        httpRequest.onreadystatechange = alertContents;\n" +
-                "        httpRequest.open('POST', 'zipCity.php');\n" +
-                "        httpRequest.setRequestHeader(\"content-type\", \"application/x-www-form-urlencoded\");\n" +
-                "        httpRequest.send('zip=' + zip);\n" +
-                "        }\n" +
-                "\n" +
-                "        function alertContents() {\n" +
-                "        if (httpRequest.readyState === XMLHttpRequest.DONE) {\n" +
-                "            if (httpRequest.status === 200) {\n" +
-                "            document.getElementById('city').value = JSON.parse(httpRequest.responseText)['city'];\n" +
-                "            document.getElementById('state').value = JSON.parse(httpRequest.responseText)['state'];\n" +
-                "            } else {\n" +
-                "                alert('There was a problem with the request.');\n" +
-                "                }\n" +
-                "            }\n" +
-                "        }\n" +
-                "    })();\n" +
-                "    </script>\n" +
                 "    </form>\n" +
                 "</html>");
     }
