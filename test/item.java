@@ -13,7 +13,7 @@ public class item extends HttpServlet{
         String password = "wRd8MJP2XGWa";
         String sql = "SELECT * FROM `Products` WHERE pid = " + request.getParameter("pid");
         HttpSession session = request.getSession();
-        session.setAttribute("pid",request.getParameter("pid"));
+        session.setAttribute("pid", Integer.parseInt(request.getParameter("pid")));
         PrintWriter out = response.getWriter();
 //        RequestDispatcher rd = request.getRequestDispatcher("history");
 //        try{
