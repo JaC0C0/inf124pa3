@@ -65,7 +65,7 @@ public class history extends HttpServlet {
             } else {
                 out.println("<p>Recent Items</p><br>");
                 for (int i = 0; i < 5; i++) {
-                    String sql = "SELECT * FROM `Products` WHERE pid = " + Integer.toString(pid);
+                    String sql = "SELECT * FROM `Products` WHERE pid = " + pid;
                     ResultSet rs = st.executeQuery(sql);
                     while (rs.next()) {
                         String name = rs.getString("name");
